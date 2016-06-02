@@ -1,0 +1,1575 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vector</name>
+    </assembly>
+    <members>
+        <member name="T:Vector.TestNumeric">
+            <summary>
+            数字测试类
+            </summary>
+        </member>
+        <member name="M:Vector.TestNumeric.IsNumeric(System.String)">
+            <summary>
+            是否为数字组合
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.TestNumeric.IsInt(System.String)">
+            <summary>
+            是否为整数
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.TestNumeric.IsPosInt(System.String)">
+            <summary>
+            是否为正整数，不同于IsNumeric()
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.TestNumeric.IsReal(System.String)">
+            <summary>
+            是否为实数
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.TestNumeric.IsPosReal(System.String)">
+            <summary>
+            是否为正实数
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Vector.Vector2">
+            <summary>
+            二维向量
+            </summary>
+        </member>
+        <member name="M:Vector.Vector2.CompareEps(System.Double,System.Double,System.Double)">
+            <summary>
+            判断在给定的误差范围内两个数值是否相等
+            </summary>
+            <param name="comp1"></param>
+            <param name="comp2"></param>
+            <param name="eps"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Vector.Vector2.#ctor(Vector.Point2)">
+            <summary>
+            始点为原点，终点为p的向量
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Vector.Vector2.#ctor(Vector.Point2,Vector.Point2)">
+            <summary>
+            始点为startP，终点为endP的向量
+            </summary>
+            <param name="startP"></param>
+            <param name="endP"></param>
+        </member>
+        <member name="M:Vector.Vector2.op_Addition(Vector.Vector2,Vector.Vector2)">
+            <summary>
+            加法操作符
+            </summary>
+            <param name="vector1"></param>
+            <param name="vector2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.op_Subtraction(Vector.Vector2,Vector.Vector2)">
+            <summary>
+            减法操作符
+            </summary>
+            <param name="vector1"></param>
+            <param name="vector2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.Formatting(Vector.Vector2)">
+            <summary>
+            规范化
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.IsEqual(Vector.Vector2,Vector.Vector2)">
+            <summary>
+            是否相等
+            </summary>
+            <param name="vector1"></param>
+            <param name="vector2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.ToString">
+            <summary>
+            将向量转化为可视化字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetLength(Vector.Vector2)">
+            <summary>
+            长度(模)
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetPointOfLengthFormStartP(Vector.Vector2,System.Double)">
+            <summary>
+            获取直线上距离开始点len的点
+            </summary>
+            <param name="vector">直线的向量</param>
+            <param name="len">距离</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.Scale(Vector.Vector2,System.Double)">
+            <summary>
+            缩放
+            </summary>
+            <param name="vector"></param>
+            <param name="scalingFactor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetUnitVector(Vector.Vector2)">
+            <summary>
+            单位向量
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetJJ(Vector.Point2,Vector.Point2,Vector.Point2)">
+            <summary>
+            根据有序三点(中间点为顶点)获取角度(0,180)
+            </summary>
+            <param name="p1"></param>
+            <param name="p2"></param>
+            <param name="p3"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetJJ(Vector.Vector2,Vector.Vector2)">
+            <summary>
+            两向量的夹角[0,180)
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetCross(Vector.Vector2,Vector.Vector2)">
+            <summary>
+            获取两直线的交点
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetCross(Vector.Line2,Vector.Line2)">
+            <summary>
+            获取两直线的交点
+            </summary>
+            <param name="line1"></param>
+            <param name="line2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.CeShi4DianHuaJiao(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            检测画角的4点条件是否符合。
+            </summary>    
+            <param name="x1">画角第一点X轴坐标</param>
+            <param name="y1">画角第一点Y轴坐标</param>
+            <param name="x2">画角第二点X轴坐标</param>
+            <param name="y2">画角第二点Y轴坐标</param>
+            <param name="x3">画角第三点X轴坐标</param>
+            <param name="y3">画角第三点Y轴坐标</param>
+            <param name="x4">画角第四点Y轴坐标</param>
+            <param name="y4">画角第四点Y轴坐标</param>
+            <returns>返回画角类型值</returns>
+        </member>
+        <member name="M:Vector.Vector2.HuChuJiaoDian(Vector.Vector2,Vector.Vector2,Vector.Point2@)">
+            <summary>
+            返回呼出交点的数组
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <param name="pf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetCross(Vector.Vector2,Vector.Vector2,Vector.Point2@)">
+            <summary>
+            获取两直线的交点
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <param name="cross"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetCross(Vector.Line2,Vector.Line2,Vector.Point2@)">
+            <summary>
+            获取两线段的交点，有问题，因为该算法是延长线的交点
+            </summary>
+            <param name="l1"></param>
+            <param name="l2"></param>
+            <param name="cross"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.Parallel(Vector.Vector2,Vector.Vector2)">
+            <summary>
+            两向量是否平行
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.Perpendicular(Vector.Vector2,Vector.Vector2)">
+            <summary>
+            两向量是否垂直
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.Transform(Vector.Vector2,Vector.Point2)">
+            <summary>
+            平移(正方向)
+            </summary>
+            <param name="vector"></param>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.Transform(Vector.Vector2,System.Double)">
+            <summary>
+            旋转(顺时针)
+            </summary>
+            <param name="vector"></param>
+            <param name="angle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.Rotation(Vector.Point2,System.Double)">
+            <summary>
+            求点p经过旋转弧度a之后的新点坐标
+            </summary>
+            <param name="p"></param>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetTransformation(Vector.Point2,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            综合转换
+            </summary>
+            <param name="srcPt"></param>
+            <param name="tX"></param>
+            <param name="tY"></param>
+            <param name="sX"></param>
+            <param name="sY"></param>
+            <param name="Theta">以弧度计量的角度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.BaseToSystem(Vector.Vector2,System.Double[0:,0:])">
+            <summary>
+            基于指定基矩阵的向量
+            </summary>
+            <param name="vector">原向量</param>
+            <param name="baseMatrix">基矩阵</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.IsNeg(System.Int32)">
+            <summary>
+            偶数为正，奇数为负
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetInverseMatrix(System.Double[0:,0:])">
+            <summary>
+            求逆阵
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.LineToVector(Vector.Line2)">
+            <summary>
+            线转化为向量
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.VectorToLine(Vector.Vector2)">
+            <summary>
+            向量转化为线
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetCZAVGLine(Vector.Line2)">
+            <summary>
+            求垂直平分线，第一个点Point1即为垂足，且长度为1
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetEndPofLineK(Vector.Point2,System.Double,System.Double)">
+            <summary>
+            根据线段的始点、角度和长度，确定线段的正向终点
+            </summary>
+            <param name="startP"></param>
+            <param name="angle">弧度为单位</param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetEndPofLine_K(Vector.Point2,System.Double,System.Double)">
+            <summary>
+            根据线段的始点、角度和长度，确定线段的反向终点
+            </summary>
+            <param name="startP"></param>
+            <param name="angle">弧度为单位</param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetCZLine(Vector.Point2,Vector.Line2,System.Boolean@)">
+            <summary>
+            求过点p垂直于line的垂直线，第一个点Point1即为垂足，长度为1 注意：这个函数非常重要！很多地方都用上！
+            </summary>
+            <param name="p"></param>
+            <param name="line"></param>
+            <param name="ifInLine"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.InLine(Vector.Point2,Vector.Point2,Vector.Point2)">
+            <summary>
+            X是否在AB所在的直线上
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <param name="X"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector2.GetAngleAvgLine(Vector.Vector2,Vector.Vector2,Vector.Vector2@)">
+            <summary>
+            求角平分线(中分线)，v1,v2不能单位化，否则有误。
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <param name="avgLine"></param>
+        </member>
+        <member name="M:Vector.Vector2.GetAngleAvgLine(Vector.Line2,Vector.Line2,Vector.Line2@)">
+            <summary>
+            求角平分线(中分线)
+            </summary>
+            <param name="l1"></param>
+            <param name="l2"></param>
+            <param name="avgLine"></param>
+        </member>
+        <member name="P:Vector.Vector2.Eps">
+            <summary>
+            获取或设置误差
+            </summary>
+        </member>
+        <member name="P:Vector.Vector2.Direction">
+            <summary>
+            方向
+            </summary>
+        </member>
+        <member name="P:Vector.Vector2.Start">
+            <summary>
+            获取或设置向量的始点
+            </summary>
+        </member>
+        <member name="P:Vector.Vector2.End">
+            <summary>
+            获取或设置向量的终点
+            </summary>
+        </member>
+        <member name="P:Vector.Vector2.Empty">
+            <summary>
+            空向量
+            </summary>
+        </member>
+        <member name="T:Vector.Vector3">
+            <summary>
+            三维向量
+            </summary>
+        </member>
+        <member name="M:Vector.Vector3.CompareEps(System.Double,System.Double,System.Double)">
+            <summary>
+            判断在给定的误差范围内两个数值是否相等
+            </summary>
+            <param name="comp1"></param>
+            <param name="comp2"></param>
+            <param name="eps"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Vector.Vector3.#ctor(Vector.Point3)">
+            <summary>
+            始点为原点，终点为p的向量
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:Vector.Vector3.#ctor(Vector.Point3,Vector.Point3,System.Boolean)">
+            <summary>
+            如果pointDirection为true，则start = new Point3(0, 0, 0);end = startP;x0point = endP;
+            </summary>
+            <param name="startP"></param>
+            <param name="endP"></param>
+            <param name="pointDirection"></param>
+        </member>
+        <member name="M:Vector.Vector3.op_Addition(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            加法操作符
+            </summary>
+            <param name="vector1"></param>
+            <param name="vector2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.op_Subtraction(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            减法操作符
+            </summary>
+            <param name="vector1"></param>
+            <param name="vector2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Formatting(Vector.Vector3)">
+            <summary>
+            规范化
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.IsEqual(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            是否相等
+            </summary>
+            <param name="vector1"></param>
+            <param name="vector2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.ToString">
+            <summary>
+            将向量转化为可视化字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetLength(Vector.Vector3)">
+            <summary>
+            长度(模)
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetPointOfLengthFormStartP(Vector.Vector3,System.Double)">
+            <summary>
+            获取直线上距离开始点len的点，可能有问题...
+            </summary>
+            <param name="vector">直线的向量</param>
+            <param name="len">距离</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Scale(Vector.Vector3,System.Double)">
+            <summary>
+            缩放
+            </summary>
+            <param name="vector"></param>
+            <param name="scalingFactor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetUnitVector(Vector.Vector3)">
+            <summary>
+            单位向量
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetAngleX(Vector.Vector3)">
+            <summary>
+            获取当前向量与X轴的夹角
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetAngleY(Vector.Vector3)">
+            <summary>
+            获取当前向量与Y轴的夹角
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetAngleZ(Vector.Vector3)">
+            <summary>
+            获取当前向量与Z轴的夹角
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetVectorsAngle(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            两向量的夹角
+            </summary>
+            <param name="vector1"></param>
+            <param name="vector2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Vector3ToVector2(Vector.Vector3)">
+            <summary>
+            3维转化为2维
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetJJ(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            两向量的夹角[0,180)
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.IsLineCross(Vector.Line3,Vector.Line3)">
+            <summary>
+            判断两线段是否相交，v1,v2不能格式化，否则有误
+            </summary>
+            <param name="l1"></param>
+            <param name="l2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.IsVectorCross(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            判断两直线是否相交，v1,v2不能格式化，否则有误
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Between(System.Double,System.Double,System.Double)">
+            <summary>
+            范围
+            </summary>
+            <param name="val"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetCoefAndConsFrom2Vectors(Vector.Vector3,Vector.Vector3,System.Double[0:,0:]@,System.Double[]@)">
+            <summary>
+            由直线的端点获取直线的方程组系数矩阵以及常数矩阵，注：coef[4,3], cons[4]
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <param name="coef"></param>
+            <param name="cons"></param>
+        </member>
+        <member name="M:Vector.Vector3.GetCross(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            获取两直线的交点，v1,v2不能格式化，否则有误
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetCross(Vector.Line3,Vector.Line3)">
+            <summary>
+            获取两线段的交点
+            </summary>
+            <param name="l1"></param>
+            <param name="l2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Parallel(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            两向量是否平行
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Perpendicular(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            两向量是否垂直
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Transform(Vector.Vector3,Vector.Point3)">
+            <summary>
+            平移(正方向)
+            </summary>
+            <param name="vector"></param>
+            <param name="offset"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Transform(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            旋转(顺时针)
+            </summary>
+            <param name="vector"></param>
+            <param name="baseVector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetVectorFrom2Faces(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            两面交线
+            </summary>
+            <param name="A1"></param>
+            <param name="B1"></param>
+            <param name="C1"></param>
+            <param name="D1"></param>
+            <param name="A2"></param>
+            <param name="B2"></param>
+            <param name="C2"></param>
+            <param name="D2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.LineToVector(Vector.Line3)">
+            <summary>
+            线转化为向量
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.VectorToLine(Vector.Vector3)">
+            <summary>
+            向量转化为线
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetProjP2L(Vector.Point3,Vector.Line3)">
+            <summary>
+            点在线上的投影
+            </summary>
+            <param name="point"></param>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetProjP2L(Vector.Point3,Vector.Vector3)">
+            <summary>
+            点在线上的投影
+            </summary>
+            <param name="point"></param>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetProjP2F(Vector.Point3,Vector.Face)">
+            <summary>
+            点在面上的投影
+            </summary>
+            <param name="point"></param>
+            <param name="face"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetProjL2L(Vector.Line3,Vector.Line3)">
+            <summary>
+            线在线上的投影
+            </summary>
+            <param name="line1"></param>
+            <param name="line2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetProjL2F(Vector.Line3,Vector.Face)">
+            <summary>
+            线在面上的投影
+            </summary>
+            <param name="line"></param>
+            <param name="face"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetJJL2L(Vector.Line3,Vector.Line3)">
+            <summary>
+            线线夹角
+            </summary>
+            <param name="line1"></param>
+            <param name="line2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetJJL2F(Vector.Line3,Vector.Face)">
+            <summary>
+            线面夹角
+            </summary>
+            <param name="line"></param>
+            <param name="face"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetJJF2F(Vector.Face,Vector.Face)">
+            <summary>
+            面面夹角
+            </summary>
+            <param name="face1"></param>
+            <param name="face2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.IsNeg(System.Int32)">
+            <summary>
+            偶数为正，奇数为负
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Met(System.Double[0:,0:],System.Int32,System.Int32)">
+            <summary>
+            获取矩阵D在i行j列的子矩阵
+            </summary>
+            <param name="D"></param>
+            <param name="i"></param>
+            <param name="j"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.Det(System.Double[0:,0:])">
+            <summary>
+            获取矩阵的行列式值
+            </summary>
+            <param name="D"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetRootsByCramer3D(System.Double[0:,0:],System.Double[])">
+            <summary>
+            求三元一次（线性）方程组的根
+            </summary>
+            <param name="coef"></param>
+            <param name="cons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetRootsByCramer(System.Double[0:,0:],System.Double[])">
+            <summary>
+            求多元一次（线性）方程组的根
+            </summary>
+            <param name="coef"></param>
+            <param name="cons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.CreateTransMatrix(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            创建三维转换矩阵，注：transMtx = new double[4, 3]
+            </summary>
+            <param name="Rx"></param>
+            <param name="Ry"></param>
+            <param name="Rz"></param>
+            <param name="Sx"></param>
+            <param name="Sy"></param>
+            <param name="Sz"></param>
+            <param name="Tx"></param>
+            <param name="Ty"></param>
+            <param name="Tz"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetTransformation(Vector.Point3,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            综合转换
+            </summary>
+            <param name="srcPt"></param>
+            <param name="Rx">以弧度计量的角度(x分量)</param>
+            <param name="Ry">以弧度计量的角度(y分量)</param>
+            <param name="Rz">以弧度计量的角度(z分量)</param>
+            <param name="Sx"></param>
+            <param name="Sy"></param>
+            <param name="Sz"></param>
+            <param name="Tx"></param>
+            <param name="Ty"></param>
+            <param name="Tz"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.BaseToSystem(Vector.Vector3,System.Double[0:,0:])">
+            <summary>
+            基于指定基矩阵的向量
+            </summary>
+            <param name="vector">原向量</param>
+            <param name="baseMatrix">基矩阵</param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetInverseMatrix(System.Double[0:,0:])">
+            <summary>
+            求逆阵
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetCZAVGLine(Vector.Line3)">
+            <summary>
+            求垂直平分线，第一个点Point1即为垂足，且长度为1
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetCZLine(Vector.Point3,Vector.Line3,System.Boolean@)">
+            <summary>
+            求过点p垂直于line的垂直线，第一个点Point1即为垂足
+            </summary>
+            <param name="p"></param>
+            <param name="line"></param>
+            <param name="ifInLine"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.InLine(Vector.Point3,Vector.Point3,Vector.Point3)">
+            <summary>
+            X是否在AB所在的直线上
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <param name="X"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Vector3.GetPerpendicular(Vector.Vector3,Vector.Point3)">
+            <summary>
+            返回与指定向量vector垂直且经过vector上一定点的平面
+            </summary>
+            <param name="vector"></param>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Vector.Vector3.Eps">
+            <summary>
+            获取或设置误差
+            </summary>
+        </member>
+        <member name="P:Vector.Vector3.Direction">
+            <summary>
+            方向
+            </summary>
+        </member>
+        <member name="P:Vector.Vector3.Start">
+            <summary>
+            获取或设置向量的始点
+            </summary>
+        </member>
+        <member name="P:Vector.Vector3.End">
+            <summary>
+            获取或设置向量的终点
+            </summary>
+        </member>
+        <member name="P:Vector.Vector3.X0point">
+            <summary>
+            向量上的某一点
+            </summary>
+        </member>
+        <member name="P:Vector.Vector3.Empty">
+            <summary>
+            空向量
+            </summary>
+        </member>
+        <member name="T:Vector.Mul">
+            <summary>
+            乘法类
+            </summary>
+        </member>
+        <member name="M:Vector.Mul.Sum(System.Double[0:,0:],System.Double[0:,0:],System.Int32,System.Int32)">
+            <summary>
+            矩阵的乘法中乘积和
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.MatrixMul(System.Double[0:,0:],System.Double[0:,0:])">
+            <summary>
+            矩阵的乘法
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.VectorToMatrix(Vector.Vector3)">
+            <summary>
+            向量转化为矩阵
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.MatrixToVector(CSharpAlgorithm.Algorithm.Matrix)">
+            <summary>
+            矩阵转化为向量
+            </summary>
+            <param name="matrix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.GetXmul(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            叉乘，两向量平行的充要条件是叉乘为 (0, 0, 0)
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.ColumeToRow(CSharpAlgorithm.Algorithm.Matrix)">
+            <summary>
+            列向量转化为行向量
+            </summary>
+            <param name="X2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.RowToColume(CSharpAlgorithm.Algorithm.Matrix)">
+            <summary>
+            行向量转化为列向量
+            </summary>
+            <param name="X2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.GetPmul(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            点乘，两向量垂直的充要条件是点乘为 0
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.MixMul(Vector.Vector3,Vector.Vector3,Vector.Vector3)">
+            <summary>
+            混合积，三向量共面的充要条件是混合积为 0
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <param name="v3"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.Vector2MulMatrix(Vector.Vector2,System.Double[0:,0:])">
+            <summary>
+            二维向量与矩阵相乘
+            </summary>
+            <param name="vector"></param>
+            <param name="baseMatrix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Mul.Vector3MulMatrix(Vector.Vector3,System.Double[0:,0:])">
+            <summary>
+            三维向量与矩阵相乘
+            </summary>
+            <param name="vector"></param>
+            <param name="baseMatrix"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Vector.Point2">
+            <summary>
+            二维点
+            </summary>
+        </member>
+        <member name="M:Vector.Point2.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Vector.Point2.#ctor(System.Single,System.Single)">
+            <summary>
+            初始化点
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:Vector.Point2.IsEqual(Vector.Point2,Vector.Point2)">
+            <summary>
+            是否相等
+            </summary>
+            <param name="point1"></param>
+            <param name="point2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Point2.ToString">
+            <summary>
+            将二维坐标点转化为可视化字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Point2.Parse(System.String)">
+            <summary>
+            字符串转化为点
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Vector.Point2.X">
+            <summary>
+            点的X坐标
+            </summary>
+        </member>
+        <member name="P:Vector.Point2.Y">
+            <summary>
+            点的Y坐标
+            </summary>
+        </member>
+        <member name="P:Vector.Point2.ZERO">
+            <summary>
+            零点
+            </summary>
+        </member>
+        <member name="T:Vector.Point3">
+            <summary>
+            三维点
+            </summary>
+        </member>
+        <member name="M:Vector.Point3.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Vector.Point3.#ctor(System.Single,System.Single,System.Single)">
+            <summary>
+            初始化点
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+        </member>
+        <member name="M:Vector.Point3.IsEqual(Vector.Point3,Vector.Point3)">
+            <summary>
+            是否相等
+            </summary>
+            <param name="point1"></param>
+            <param name="point2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Point3.ToString">
+            <summary>
+            将三维坐标点转化为可视化字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Point3.Parse(System.String)">
+            <summary>
+            字符串转化为点
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Vector.Point3.X">
+            <summary>
+            点的X坐标
+            </summary>
+        </member>
+        <member name="P:Vector.Point3.Y">
+            <summary>
+            点的Y坐标
+            </summary>
+        </member>
+        <member name="P:Vector.Point3.Z">
+            <summary>
+            点的Z坐标
+            </summary>
+        </member>
+        <member name="P:Vector.Point3.ZERO">
+            <summary>
+            零点
+            </summary>
+        </member>
+        <member name="T:Vector.Face">
+            <summary>
+            面
+            </summary>
+        </member>
+        <member name="M:Vector.Face.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Vector.Face.#ctor(Vector.Vector3,Vector.Point3)">
+            <summary>
+            法向量与点构造面
+            </summary>
+            <param name="vector"></param>
+            <param name="point"></param>
+        </member>
+        <member name="M:Vector.Face.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            解析式构造面
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <param name="c"></param>
+            <param name="d"></param>
+        </member>
+        <member name="M:Vector.Face.#ctor(Vector.Point3,Vector.Point3,Vector.Point3)">
+            <summary>
+            三点定面
+            </summary>
+            <param name="point1"></param>
+            <param name="point2"></param>
+            <param name="point3"></param>
+        </member>
+        <member name="M:Vector.Face.ToString">
+            <summary>
+            转化为可视化的字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Face.Transform(Vector.Face,Vector.Vector3)">
+            <summary>
+            旋转
+            </summary>
+            <param name="face"></param>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Face.Transform(Vector.Face,Vector.Point3)">
+            <summary>
+            平移
+            </summary>
+            <param name="face"></param>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Face.Transform(Vector.Face,Vector.Vector3,Vector.Point3)">
+            <summary>
+            先旋转，后平移
+            </summary>
+            <param name="face"></param>
+            <param name="vector"></param>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Face.Transform(Vector.Face,Vector.Point3,Vector.Vector3)">
+            <summary>
+            先平移，后旋转
+            </summary>
+            <param name="face"></param>
+            <param name="point"></param>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Face.IsEqual(Vector.Face,Vector.Face)">
+            <summary>
+            是否相等
+            </summary>
+            <param name="face1"></param>
+            <param name="face2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Face.ShareFace(Vector.Line3,Vector.Line3)">
+            <summary>
+            空间中的两线段是否共面
+            </summary>
+            <param name="l1"></param>
+            <param name="l2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Face.ShareFace(Vector.Vector3,Vector.Vector3)">
+            <summary>
+            空间中的两向量是否共面
+            </summary>
+            <param name="v1"></param>
+            <param name="v2"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Vector.Face.N">
+            <summary>
+            法向量
+            </summary>
+        </member>
+        <member name="P:Vector.Face.P">
+            <summary>
+            面上的某一点
+            </summary>
+        </member>
+        <member name="P:Vector.Face.A">
+            <summary>
+            解析式中的A
+            </summary>
+        </member>
+        <member name="P:Vector.Face.B">
+            <summary>
+            解析式中的B
+            </summary>
+        </member>
+        <member name="P:Vector.Face.C">
+            <summary>
+            解析式中的C
+            </summary>
+        </member>
+        <member name="P:Vector.Face.D">
+            <summary>
+            解析式中的D
+            </summary>
+        </member>
+        <member name="T:Vector.Line2">
+            <summary>
+            二维线
+            </summary>
+        </member>
+        <member name="M:Vector.Line2.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Vector.Line2.#ctor(Vector.Point2,Vector.Point2)">
+            <summary>
+            两点定线
+            </summary>
+            <param name="p1"></param>
+            <param name="p2"></param>
+        </member>
+        <member name="M:Vector.Line2.#ctor(Vector.Point2,System.Single,System.Double)">
+            <summary>
+            返回长度为length，斜率为xl，过p且以p为始点的线段
+            </summary>
+            <param name="p"></param>
+            <param name="xl"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Vector.Line2.#ctor(System.Single,System.Single,System.Single,System.Double)">
+            <summary>
+            解析式构造线
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <param name="C"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Vector.Line2.MakeLine(Vector.Point2,Vector.Point2)">
+            <summary>
+            根据已知两点坐标，求过这两点的直线解析方程： a*x+b*y+c = 0  (a >= 0) 
+            </summary>
+            <param name="p1"></param>
+            <param name="p2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Line2.ToString">
+            <summary>
+            转化为可视化的字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Vector.Line2.Point1">
+            <summary>
+            始点
+            </summary>
+        </member>
+        <member name="P:Vector.Line2.Point2">
+            <summary>
+            终点
+            </summary>
+        </member>
+        <member name="P:Vector.Line2.K">
+            <summary>
+            斜率
+            </summary>
+        </member>
+        <member name="P:Vector.Line2.A">
+            <summary>
+            解析式中的A
+            </summary>
+        </member>
+        <member name="P:Vector.Line2.B">
+            <summary>
+            解析式中的B
+            </summary>
+        </member>
+        <member name="P:Vector.Line2.C">
+            <summary>
+            解析式中的C
+            </summary>
+        </member>
+        <member name="T:Vector.Line3">
+            <summary>
+            三维线
+            </summary>
+        </member>
+        <member name="M:Vector.Line3.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Vector.Line3.#ctor(Vector.Point3,Vector.Point3)">
+            <summary>
+            两点定线
+            </summary>
+            <param name="p1"></param>
+            <param name="p2"></param>
+        </member>
+        <member name="M:Vector.Line3.#ctor(Vector.Point3,System.Single,System.Double)">
+            <summary>
+            返回长度为length，斜率为xl，过p且以p为始点的线段
+            </summary>
+            <param name="p"></param>
+            <param name="xl"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Vector.Line3.#ctor(System.Single,System.Single,System.Single,System.Double)">
+            <summary>
+            解析式构造线
+            </summary>
+            <param name="A"></param>
+            <param name="B"></param>
+            <param name="C"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:Vector.Line3.MakeLine(Vector.Point3,Vector.Point3)">
+            <summary>
+            根据已知两点坐标，求过这两点的直线解析方程： a*x+b*y+c = 0  (a >= 0) 
+            </summary>
+            <param name="p1"></param>
+            <param name="p2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.Line3.ToString">
+            <summary>
+            转化为可视化的字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Vector.Line3.Point1">
+            <summary>
+            始点
+            </summary>
+        </member>
+        <member name="P:Vector.Line3.Point2">
+            <summary>
+            终点
+            </summary>
+        </member>
+        <member name="P:Vector.Line3.Kyx">
+            <summary>
+            Y对X的斜率
+            </summary>
+        </member>
+        <member name="P:Vector.Line3.Kzx">
+            <summary>
+            Z对X的斜率
+            </summary>
+        </member>
+        <member name="P:Vector.Line3.A">
+            <summary>
+            解析式中的A
+            </summary>
+        </member>
+        <member name="P:Vector.Line3.B">
+            <summary>
+            解析式中的B
+            </summary>
+        </member>
+        <member name="P:Vector.Line3.C">
+            <summary>
+            解析式中的C
+            </summary>
+        </member>
+        <member name="T:Vector.FFdistance">
+            <summary>
+            面面距离
+            </summary>
+        </member>
+        <member name="M:Vector.FFdistance.GetDistance(Vector.Face,Vector.Face)">
+            <summary>
+            求面面距离
+            </summary>
+            <param name="face1"></param>
+            <param name="face2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Vector.LFcross">
+            <summary>
+            线面距离
+            </summary>
+        </member>
+        <member name="M:Vector.LFcross.GetCross(Vector.Line3,Vector.Face)">
+            <summary>
+            求线面距离
+            </summary>
+            <param name="line"></param>
+            <param name="face"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Vector.LFcross.Eps">
+            <summary>
+            误差
+            </summary>
+        </member>
+        <member name="T:Vector.LLcross">
+            <summary>
+            线线交点
+            </summary>
+        </member>
+        <member name="M:Vector.LLcross.GetLLcrs2(Vector.Line2,Vector.Line2,Vector.Point2@)">
+            <summary>
+            求二维线线交点
+            </summary>
+            <param name="l1"></param>
+            <param name="l2"></param>
+            <param name="cross"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.LLcross.GetLLcrs3(Vector.Line3,Vector.Line3)">
+            <summary>
+            求三维线线交点
+            </summary>
+            <param name="l1"></param>
+            <param name="l2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Vector.LLdistance">
+            <summary>
+            线线距离
+            </summary>
+        </member>
+        <member name="M:Vector.LLdistance.GetDistance2(Vector.Line2,Vector.Line2)">
+            <summary>
+             求二维线线距
+            </summary>
+            <param name="line1"></param>
+            <param name="line2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.LLdistance.GetDistance3(Vector.Line3,Vector.Line3)">
+            <summary>
+             求三维线线距
+            </summary>
+            <param name="line1"></param>
+            <param name="line2"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Vector.LLdistance.Eps">
+            <summary>
+            误差
+            </summary>
+        </member>
+        <member name="T:Vector.PFdistance">
+            <summary>
+            点面距离
+            </summary>
+        </member>
+        <member name="M:Vector.PFdistance.GetDistance(Vector.Point3,Vector.Face)">
+            <summary>
+            求点面距离，无返回垂足
+            </summary>
+            <param name="point"></param>
+            <param name="face"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.PFdistance.GetDistance(Vector.Point3,Vector.Face,Vector.Point3@)">
+            <summary>
+            求点面距离，有返回垂足
+            </summary>
+            <param name="point"></param>
+            <param name="face"></param>
+            <param name="crossP"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Vector.PLdistance">
+            <summary>
+            点线距离
+            </summary>
+        </member>
+        <member name="M:Vector.PLdistance.GetDistance2(Vector.Point2,Vector.Line2,Vector.Point2@)">
+            <summary>
+            求二维点线距
+            </summary>
+            <param name="point"></param>
+            <param name="line"></param>
+            <param name="crossP"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.PLdistance.GetDistance3(Vector.Point3,Vector.Line3,Vector.Point3@)">
+            <summary>
+            求三维点线距
+            </summary>
+            <param name="point"></param>
+            <param name="line"></param>
+            <param name="crossP"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.PLdistance.GetDistance3(Vector.Point3,Vector.Point3,Vector.Point3,Vector.Point3@)">
+            <summary>
+            求三维点线的两点的距离
+            </summary>
+            <param name="point"></param>
+            <param name="point1"></param>
+            <param name="point2"></param>
+            <param name="crossP"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Vector.PPdistance">
+            <summary>
+            点点距离
+            </summary>
+        </member>
+        <member name="M:Vector.PPdistance.GetPPdis2(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            求二维点点距
+            </summary>
+            <param name="x1"></param>
+            <param name="y1"></param>
+            <param name="x2"></param>
+            <param name="y2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.PPdistance.GetPPdis3(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            求三维点点距
+            </summary>
+            <param name="x1"></param>
+            <param name="y1"></param>
+            <param name="z1"></param>
+            <param name="x2"></param>
+            <param name="y2"></param>
+            <param name="z2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Vector.XL">
+            <summary>
+            斜率类
+            </summary>
+        </member>
+        <member name="F:Vector.XL.eps">
+            <summary>
+            误差
+            </summary>
+        </member>
+        <member name="M:Vector.XL.Getxl2(Vector.Line2)">
+            <summary>
+            求二维斜率
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.XL.Getxl3(Vector.Line3)">
+            <summary>
+            求三维斜率
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Vector.VectorDirection">
+            <summary>
+            向量方向类
+            </summary>
+        </member>
+        <member name="F:Vector.VectorDirection.eps">
+            <summary>
+            误差
+            </summary>
+        </member>
+        <member name="M:Vector.VectorDirection.GetDirection2(Vector.Line2)">
+            <summary>
+            求二维直线的方向角[0,2*PI)，弧度为单位
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.VectorDirection.GetDirection3(Vector.Line3)">
+            <summary>
+            求三维直线的方向角[0,2*PI)，弧度为单位
+            </summary>
+            <param name="line"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.VectorDirection.GetDirection2(Vector.Vector2)">
+            <summary>
+            求二维向量的方向角[0,2*PI)，弧度为单位
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Vector.VectorDirection.GetDirection3(Vector.Vector3)">
+            <summary>
+            求三维向量的方向角[0,2*PI)，弧度为单位
+            </summary>
+            <param name="vector"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

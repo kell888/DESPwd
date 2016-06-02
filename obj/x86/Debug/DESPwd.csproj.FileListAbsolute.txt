@@ -1,0 +1,10 @@
+F:\DESPwd\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\DESPwd\obj\x86\Debug\DESPwd.Form1.resources
+F:\DESPwd\obj\x86\Debug\DESPwd.Properties.Resources.resources
+F:\DESPwd\bin\Debug\DESPwd.exe
+F:\DESPwd\bin\Debug\DESPwd.pdb
+F:\DESPwd\obj\x86\Debug\DESPwd.exe
+F:\DESPwd\obj\x86\Debug\DESPwd.pdb
+F:\DESPwd\bin\Debug\DESPwd.exe.config
+F:\DESPwd\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+F:\DESPwd\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
